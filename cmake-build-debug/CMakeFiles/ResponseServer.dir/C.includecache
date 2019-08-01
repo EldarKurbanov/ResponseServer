@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/eldar/CLionProjects/ResponseServer/main.c
+stdio.h
+-
+sys/socket.h
+-
+errno.h
+-
+stdlib.h
+-
+netinet/in.h
+-
+stdbool.h
+-
+string.h
+-
+zconf.h
+-
+arpa/inet.h
+-
+

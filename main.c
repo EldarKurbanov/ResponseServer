@@ -46,7 +46,7 @@ int main() {
             //check received packet and response
             if (!strcmp(read_buf, CLIENT_MSG)) {
                 sleep(3);
-                client_inf.sin_port = CLIENT_PORT;
+                client_inf.sin_port = htons(CLIENT_PORT);
                 int send_sock_d = socket(AF_INET, SOCK_DGRAM, 0);
                     if (send_sock_d == -1) puts("Sender socket didn't create.");
                 sendto(send_sock_d, SERVER_MSG, sizeof(SERVER_MSG), 0, (const struct sockaddr *) &client_inf,

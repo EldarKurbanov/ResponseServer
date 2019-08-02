@@ -69,7 +69,7 @@ int main() {
             sendto(send_sock_d, SERVER_MSG, sizeof(SERVER_MSG), 0, (struct sockaddr *) &client_inf, sizeof(client_inf));
             close(send_sock_d);
 
-            // print address of client
+            // print client addr
             char str[INET_ADDRSTRLEN];
             inet_ntop(AF_INET, &(client_inf.sin_addr), str, INET_ADDRSTRLEN);
             printf("Response send to %s.\n", str);

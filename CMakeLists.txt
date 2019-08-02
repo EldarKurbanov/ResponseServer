@@ -3,4 +3,4 @@ project(ResponseServer C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(ResponseServer main.c)
+add_executable(ResponseServer main.c broadcast.h broadcast.cpp)

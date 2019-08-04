@@ -24,9 +24,9 @@ int broadcast_connect()
 int main()
 {
     int sock_d = broadcast_connect();
-    while(true) {
+    /*while(true) {
         char* message = broadcast_recv(sock_d);
         process_control(message);
-    }
+    }*/
 }
 

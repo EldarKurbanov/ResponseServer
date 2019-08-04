@@ -8,25 +8,25 @@ void process_button_input(struct control_button *input)
 {   // TODO call gpio methods
     switch (input->state) {
         case CONTROL_STATE_FORWARD:
-            printf("forward");
+            printf("forward\n");
             break;
         case CONTROL_STATE_BACK:
-            printf("back");
+            printf("back\n");
             break;
         case CONTROL_STATE_ROTATE_LEFT:
-            printf("rotate left");
+            printf("rotate left\n");
             break;
         case CONTROL_STATE_ROTATE_RIGHT:
-            printf("rotate right");
+            printf("rotate right\n");
             break;
         case CONTROL_STATE_LEFT_FORWARD:
-            printf("left forward");
+            printf("left forward\n");
             break;
         case CONTROL_STATE_RIGHT_FORWARD:
-            printf("right forward");
+            printf("right forward\n");
             break;
         default:
-            printf("<process_button_input> wrong control state");
+            fprintf(stderr,"<process_button_input> wrong control state\n");
     }
 }
 
@@ -61,7 +61,7 @@ void process_control(char *message)
             break;
         }
         default:
-            printf("<control_loop>: Wrong control "
-                   "type in client message.");
+            fprintf(stderr,"<control_loop>: Wrong control "
+                                  "type in client message.");
     }
 }

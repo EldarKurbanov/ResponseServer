@@ -8,4 +8,7 @@ add_executable(
         main.c
         broadcast.h
         broadcast.c
-)
+
+        lib/cJSON.c
+        lib/cJSON.h
+        control_struct.h control_struct.c)

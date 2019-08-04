@@ -7,7 +7,7 @@ int internal_client_port;
 char addr_buf[INET_ADDRSTRLEN];
 char read_buf[BUFSIZ];
 
-void err_exit(const char* message) {
+void err_exit(const char *message) {
     char buf[BUFSIZ];
     snprintf(buf, BUFSIZ, "\nError %i: %s", errno, message);
     perror(buf);
@@ -39,7 +39,7 @@ int broadcast_init(const int srv_port, const int client_port)
     return sock_d;
 }
 
-void broadcast_send(const char* message)
+void broadcast_send(const char *message)
 {
     client_inf.sin_port = htons(internal_client_port);
 

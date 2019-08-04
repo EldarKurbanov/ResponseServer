@@ -16,13 +16,13 @@
 #include <arpa/inet.h>
 
 /* print message and exit with error */
-void err_exit(const char* message);
+void err_exit(const char *message);
 
 /* creates socket and return */
 int broadcast_init(int srv_port, int client_port);
 
 /* send message to broadcast addr with port CLIENT_PORT */
-void broadcast_send(const char* message);
+void broadcast_send(const char *message);
 
 /* return client message */
 char* broadcast_recv(int broadcast_sock_d);

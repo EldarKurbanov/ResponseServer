@@ -2,7 +2,7 @@
 // Created by mrkotyk on 04.08.2019.
 //
 
-#include "control_process.h"
+#include "process_control.h"
 
 void process_button_input(struct control_button *input)
 {   // TODO call gpio methods

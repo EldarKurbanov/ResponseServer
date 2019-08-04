@@ -2,8 +2,8 @@
 // Created by mrkotyk on 04.08.2019.
 //
 
-#ifndef RESPONSESERVER_CONTROL_PROCESS_H
-#define RESPONSESERVER_CONTROL_PROCESS_H
+#ifndef RESPONSESERVER_PROCESS_CONTROL_H
+#define RESPONSESERVER_PROCESS_CONTROL_H
 
 #include "control_struct.h"
 
@@ -15,4 +15,4 @@ void process_joystick_input(struct control_joystick *input);
 
 void process_path_input(struct control_path *input);
 
-#endif //RESPONSESERVER_CONTROL_PROCESS_H
+#endif //RESPONSESERVER_PROCESS_CONTROL_H

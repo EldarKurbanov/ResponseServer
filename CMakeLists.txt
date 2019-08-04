@@ -14,6 +14,6 @@ add_executable(
 
         control/control_struct.h
         control/control_struct.c
-        control/control_process.h
-        control/control_process.c
+        control/process_control.h
+        control/process_control.c
 )

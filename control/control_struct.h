@@ -8,7 +8,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "lib/cJSON.h"
+#include "../lib/cJSON.h"
 
 #define CONTROL_TYPE_ERR (-1)
 #define CONTROL_TYPE_BUTTON 1

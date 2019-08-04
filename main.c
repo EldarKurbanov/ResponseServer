@@ -1,5 +1,5 @@
 #pragma clang diagnostic ignored "-Wmissing-noreturn"
-#include "control_struct.h"
+#include "control/control_process.h"
 #include "broadcast.h"
 
 int broadcast_connect()
@@ -21,31 +21,12 @@ int broadcast_connect()
     return sock_d;
 }
 
-void control_loop(int sock_d)
-{
-    while(true) {
-        // TODO not broadcast
-        char *message = broadcast_recv(sock_d);
-        cJSON *control_json = cJSON_Parse(message);
-
-        switch (get_control_type(control_json)) {
-            case CONTROL_TYPE_BUTTON:
-                break;
-            case CONTROL_TYPE_JOYSTICK:
-                break;
-            case CONTROL_TYPE_PATH:
-                break;
-            default:
-                printf("<control_loop>: Wrong control "
-                               "type in client message.");
-        }
-
-    }
-}
-
 int main()
 {
     int sock_d = broadcast_connect();
-    control_loop(sock_d);
+    while(true) {
+        char* message = broadcast_recv(sock_d);
+        process_control(message);
+    }
 }
 

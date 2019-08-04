@@ -11,4 +11,9 @@ add_executable(
 
         lib/cJSON.c
         lib/cJSON.h
-        control_struct.h control_struct.c)
+
+        control/control_struct.h
+        control/control_struct.c
+        control/control_process.h
+        control/control_process.c
+)

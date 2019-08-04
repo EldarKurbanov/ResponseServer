@@ -26,18 +26,18 @@ void process_button_input(struct control_button *input)
             printf("right forward\n");
             break;
         default:
-            fprintf(stderr,"<process_button_input> wrong control state\n");
+            fprintf(stderr,"<process_button_input> wrong control state.\n");
     }
 }
 
 void process_joystick_input(struct control_joystick *input)
 {   // TODO call gpio methods
-    printf("x=%f y=%f", input->x, input->y);
+    printf("x=%f y=%f\n", input->x, input->y);
 }
 
 void process_path_input(struct control_path *input)
 {   // TODO call gpio methods
-    printf("path t=%lo", input->t);
+    printf("path t=%lo\n", input->t);
 }
 
 void process_control(char *message)
@@ -61,7 +61,7 @@ void process_control(char *message)
             break;
         }
         default:
-            fprintf(stderr,"<control_loop>: Wrong control "
-                                  "type in client message.");
+            fprintf(stderr,"<process_control>: Wrong control "
+                                  "type in client message.\n");
     }
 }

@@ -13,7 +13,6 @@ int broadcast_connect()
         if (!strcmp(client_message, "Robot, where are you?")) {
             broadcast_send("I'm here!");
             printf("Response send to %s\n", broadcast_client_addr());
-            close(sock_d);
             break;
         }
     }
@@ -24,9 +23,9 @@ int broadcast_connect()
 int main()
 {
     int sock_d = broadcast_connect();
-    /*while(true) {
+    while(true) {
         char* message = broadcast_recv(sock_d);
         process_control(message);
-    }*/
+    }
 }
 

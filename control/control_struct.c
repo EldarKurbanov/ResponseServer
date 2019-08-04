@@ -44,7 +44,7 @@ struct control_button* parse_control_button(cJSON *control_json)
     char *endptr = NULL;
 
     if(!cJSON_IsNumber(move_state) || !cJSON_IsNumber(t)) {
-        fprintf(stderr,"<parse_control_button> parse error, wrong parameter type.");
+        fprintf(stderr,"<parse_control_button> parse error, wrong parameter type.\n");
         return NULL;
     }
 
@@ -65,7 +65,7 @@ struct control_joystick* parse_control_joystick(cJSON *control_json)
     char *endptr = NULL;
 
     if(!cJSON_IsNumber(x) || !cJSON_IsNumber(y) || !cJSON_IsNumber(t)) {
-        fprintf(stderr,"<parse_control_joystick> parse error, wrong parameter type.");
+        fprintf(stderr,"<parse_control_joystick> parse error, wrong parameter type.\n");
         return NULL;
     }
 
@@ -89,7 +89,7 @@ struct control_path* parse_control_path(cJSON *control_json)
 
 
     if(!cJSON_IsString(unit) || !cJSON_IsArray(points) || !cJSON_IsNumber(t)) {
-        fprintf(stderr,"<parse_control_joystick> parse error, wrong parameter type.");
+        fprintf(stderr,"<parse_control_joystick> parse error, wrong parameter type.\n");
         return NULL;
     }
 

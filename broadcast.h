@@ -19,10 +19,16 @@
 void err_exit(const char* message);
 
 /* creates socket and return */
-int broadcast_init(int SRV_PORT, int CLIENT_PORT);
+int broadcast_init(int srv_port, int client_port);
 
 /* send message to broadcast addr with port CLIENT_PORT */
-void broadcast_send(int broadcast_sock_d, const char* CLIENT_MSG, const char* SERVER_MSG);
+void broadcast_send(const char* message);
+
+/* return client message */
+char* broadcast_recv(int broadcast_sock_d);
+
+/* return string with last client addr */
+char* broadcast_client_addr();
 
 void broadcast_close();
 

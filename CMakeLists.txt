@@ -6,6 +6,7 @@ set(CMAKE_C_STANDARD 11)
 add_executable(
         ResponseServer
         main.c
+
         broadcast.h
         broadcast.c
 
@@ -17,3 +18,7 @@ add_executable(
         control/process_control.h
         control/process_control.c
         control/control_hardware.h control/control_hardware.c)
+
+# wiringPi
+find_library(WIRINGPI_LIBRARIES NAMES wiringPi)
+target_link_libraries(ResponseServer ${WIRINGPI_LIBRARIES})

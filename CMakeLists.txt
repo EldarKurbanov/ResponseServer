@@ -7,17 +7,17 @@ add_executable(
         ResponseServer
         main.c
 
-        broadcast.h
-        broadcast.c
+        broadcast/broadcast.h
+        broadcast/broadcast.c
 
         lib/cJSON.c
         lib/cJSON.h
 
-        control/control_struct.h
-        control/control_struct.c
+        json/control_struct.h
+        json/control_struct.c
         control/process_control.h
         control/process_control.c
-        control/control_hardware.h control/control_hardware.c)
+        control/control_hardware.h control/control_hardware.c err_exit.h json/parse_req_res.h json/parse_req_res.c)
 
 # wiringPi
 find_library(WIRINGPI_LIBRARIES NAMES wiringPi)

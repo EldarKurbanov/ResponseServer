@@ -1,6 +1,8 @@
 #pragma clang diagnostic ignored "-Wmissing-noreturn"
+
 #include "control/process_control.h"
-#include "broadcast.h"
+#include "broadcast/broadcast.h"
+#include "json/parse_req_res.h"
 
 int broadcast_connect()
 {
@@ -10,9 +12,8 @@ int broadcast_connect()
         usleep(100);
         char *client_message = broadcast_recv(sock_d);
         //check received packet and response
-        if (!strcmp(client_message, "Robot, where are you?")) {
-            broadcast_send("I'm here!");
-            printf("Response send to %s\n", broadcast_client_addr());
+        if (!is_connection_request(client_message)) {
+            broadcast_send(RESPONSE_SUCCESS_STR);
             break;
         }
     }
@@ -25,6 +26,12 @@ int main()
     int sock_d = broadcast_connect();
     while(true) {
         char* message = broadcast_recv(sock_d);
+
+        if(!is_connection_request(message)) {
+            broadcast_send(RESPONSE_SUCCESS_STR);
+            continue;
+        }
+
         process_control(message);
     }
 }

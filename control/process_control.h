@@ -5,7 +5,7 @@
 #ifndef RESPONSESERVER_PROCESS_CONTROL_H
 #define RESPONSESERVER_PROCESS_CONTROL_H
 
-#include "control_struct.h"
+#include "../json/control_struct.h"
 
 void process_control(char *message);
 

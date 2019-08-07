@@ -42,6 +42,8 @@ void process_path_input(struct control_path *input)
 
 void process_control(char *message)
 {
+    printf("<process_control> start");
+
     cJSON *control_json = cJSON_Parse(message);
 
     switch (get_control_type(control_json)) {

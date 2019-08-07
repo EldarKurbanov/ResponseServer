@@ -26,7 +26,7 @@ int broadcast_init(const int srv_port, const int client_port)
     if (b_res == -1)
         err_exit("bind failed");
 
-    printf("Robot search server initialized at addr!\n");
+    printf("Robot search server initialized!\n");
 
     return sock_d;
 }

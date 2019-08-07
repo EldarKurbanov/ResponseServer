@@ -12,7 +12,7 @@ int broadcast_connect()
         usleep(100);
         char *client_message = broadcast_recv(sock_d);
         //check received packet and response
-        if (!is_connection_request(client_message)) {
+        if (is_connection_request(client_message)) {
             broadcast_send(RESPONSE_SUCCESS_STR);
             break;
         }
@@ -27,7 +27,7 @@ int main()
     while(true) {
         char* message = broadcast_recv(sock_d);
 
-        if(!is_connection_request(message)) {
+        if(is_connection_request(message)) {
             broadcast_send(RESPONSE_SUCCESS_STR);
             continue;
         }

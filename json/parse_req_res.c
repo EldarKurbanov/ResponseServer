@@ -4,17 +4,19 @@
 
 #include "parse_req_res.h"
 
-int is_connection_request(char* request)
+int is_connection_request(const char* request)
 {
     cJSON *request_json = cJSON_Parse(request);
     cJSON *method = cJSON_GetObjectItemCaseSensitive(request_json, "method");
 
-    return !cJSON_IsString(method) &&
-           !strcmp(method->valuestring, CONNECTION_REQUEST_METHOD);
+    return request_json != NULL &&
+           method != NULL &&
+           cJSON_IsString(method) &&
+           strcmp(method->valuestring, CONNECTION_REQUEST_METHOD) == 0;
 }
 
 // TODO add params parse
-struct jsonrpc_request *parse_request(char *request)
+struct jsonrpc_request *parse_request(const char *request)
 {
     cJSON *request_json = cJSON_Parse(request);
     cJSON *method = cJSON_GetObjectItemCaseSensitive(request_json, "method");

@@ -4,7 +4,7 @@
 
 #include "process_control.h"
 
-void process_button_input(struct control_button *input)
+void process_button_input(const struct control_button *input)
 {   // TODO call gpio methods
     switch (input->state) {
         case CONTROL_STATE_FORWARD:
@@ -30,21 +30,23 @@ void process_button_input(struct control_button *input)
     }
 }
 
-void process_joystick_input(struct control_joystick *input)
+void process_joystick_input(const struct control_joystick *input)
 {   // TODO call gpio methods
     printf("x=%f y=%f\n", input->x, input->y);
 }
 
-void process_path_input(struct control_path *input)
+void process_path_input(const struct control_path *input)
 {   // TODO call gpio methods
     printf("path t=%lo\n", input->t);
 }
 
-void process_control(char *message)
+void process_control(const char *message)
 {
-    printf("<process_control> start");
-
     cJSON *control_json = cJSON_Parse(message);
+    if (control_json == NULL) {
+        print_json_err();
+        return;
+    }
 
     switch (get_control_type(control_json)) {
         case CONTROL_TYPE_BUTTON: {
@@ -66,4 +68,6 @@ void process_control(char *message)
             fprintf(stderr,"<process_control>: Wrong control "
                                   "type in client message.\n");
     }
+
+    cJSON_Delete(control_json);
 }

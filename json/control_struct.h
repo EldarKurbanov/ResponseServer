@@ -39,12 +39,14 @@ struct control_path{
     const long t;
 };
 
-int get_control_type(cJSON *control_json);
+int get_control_type(const cJSON *control_json);
 
-struct control_button* parse_control_button(cJSON *control_json);
+struct control_button* parse_control_button(const cJSON *control_json);
 
-struct control_joystick* parse_control_joystick(cJSON *control_json);
+struct control_joystick* parse_control_joystick(const cJSON *control_json);
 
-struct control_path* parse_control_path(cJSON *control_json);
+struct control_path* parse_control_path(const cJSON *control_json);
+
+void print_json_err();
 
 #endif //RESPONSESERVER_CONTROL_STRUCT_H

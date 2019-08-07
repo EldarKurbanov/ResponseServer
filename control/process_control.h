@@ -7,12 +7,12 @@
 
 #include "../json/control_struct.h"
 
-void process_control(char *message);
+void process_control(const char *message);
 
-void process_button_input(struct control_button *input);
+void process_button_input(const struct control_button *input);
 
-void process_joystick_input(struct control_joystick *input);
+void process_joystick_input(const struct control_joystick *input);
 
-void process_path_input(struct control_path *input);
+void process_path_input(const struct control_path *input);
 
 #endif //RESPONSESERVER_PROCESS_CONTROL_H

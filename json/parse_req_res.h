@@ -27,10 +27,10 @@ struct jsonrpc_response{
     int id;
 };
 
-int is_connection_request(char* request);
+int is_connection_request(const char* request);
 
-struct jsonrpc_request *parse_request(char *request);
+struct jsonrpc_request *parse_request(const char *request);
 
-char* response_to_json_str(struct jsonrpc_response *response);
+char* response_to_json_str(const struct jsonrpc_response *response);
 
 #endif //RESPONSESERVER_PARSE_REQ_RES_H

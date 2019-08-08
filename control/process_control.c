@@ -42,6 +42,9 @@ void process_path_input(const struct control_path *input)
 
 void process_control(const char *message)
 {
+    if(strlen(message) == 0)
+        return;
+
     cJSON *control_json = cJSON_Parse(message);
     if (control_json == NULL) {
         print_json_err();

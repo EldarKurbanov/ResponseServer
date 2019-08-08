@@ -5,8 +5,11 @@
 #ifndef RESPONSESERVER_PARSE_REQ_RES_H
 #define RESPONSESERVER_PARSE_REQ_RES_H
 
-#define CONNECTION_REQUEST_METHOD "connectToRobot"
-#define RESPONSE_SUCCESS_STR "{\"jsonrpc\":\"2.0\",\"result\":\"allowed\",\"id\":1}"
+#define PERMISSION_REQUEST_METHOD "connectionRequest"
+#define CONNECT_METHOD "connectToRobot"
+
+#define RESPONSE_ALLOWED_STR "{\"jsonrpc\":\"2.0\",\"result\":\"allowed\",\"id\":1}"
+#define RESPONSE_CONNECT_SUCCESS "{\"jsonrpc\":\"2.0\",\"result\":\"success\",\"id\":1}"
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -27,7 +30,7 @@ struct jsonrpc_response{
     int id;
 };
 
-int is_connection_request(const char* request);
+int check_request_method(const char* request, const char* method_name);
 
 struct jsonrpc_request *parse_request(const char *request);
 

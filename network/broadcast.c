@@ -1,18 +1,22 @@
 #include "broadcast.h"
 
-socklen_t socklen = sizeof(struct sockaddr_in);
 struct sockaddr_in client_inf;
-struct sockaddr_in addr_inf;
 int internal_client_port;
 
 char addr_buf[INET_ADDRSTRLEN];
 char read_buf[BUFSIZ];
 
+socklen_t socklen;
+
 int broadcast_init(const int srv_port, const int client_port)
 {
-    addr_inf.sin_family = AF_INET;
-    addr_inf.sin_port = htons(srv_port);
-    addr_inf.sin_addr.s_addr = htonl(INADDR_ANY);
+    socklen = sizeof(struct sockaddr_in);
+
+    struct sockaddr_in addr_inf = {
+            .sin_family = AF_INET,
+            .sin_port = htons(srv_port),
+            .sin_addr.s_addr = htonl(INADDR_ANY),
+    };
 
     internal_client_port = client_port;
 
@@ -43,17 +47,18 @@ void broadcast_send(const char *message)
     sendto(send_sock_d, message, strlen(message), 0, (struct sockaddr *) &client_inf, sizeof(client_inf));
     close(send_sock_d);
 
-    printf("Response '%s' send to %s\n", message, broadcast_client_addr());
-
+    printf("Broadcast response '%s' send to %s\n", message, broadcast_client_addr());
 }
 
 char* broadcast_recv(int broadcast_sock_d)
 {
     ssize_t bytes_read = recvfrom(broadcast_sock_d, read_buf, BUFSIZ, 0, (struct sockaddr *) &client_inf, &socklen);
     read_buf[bytes_read] = '\0';
-    printf("Received message: '%s'\n", read_buf);
+    printf("Broadcast received message: '%s'\n", read_buf);
     return read_buf;
 }
+
+struct sockaddr_in* broadcast_get_client() { return &client_inf; }
 
 char* broadcast_client_addr() {
     inet_ntop(AF_INET, &(client_inf.sin_addr), addr_buf, INET_ADDRSTRLEN);

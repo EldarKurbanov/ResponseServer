@@ -14,9 +14,7 @@
 #include <string.h>
 #include <zconf.h>
 #include <arpa/inet.h>
-
-/* print message and exit with error */
-void err_exit(const char *message);
+#include "../err_exit.h"
 
 /* creates socket and return */
 int broadcast_init(int srv_port, int client_port);
@@ -30,6 +28,7 @@ char* broadcast_recv(int broadcast_sock_d);
 /* return string with last client addr */
 char* broadcast_client_addr();
 
-void broadcast_close();
+/* returns last connected client information */
+struct sockaddr_in* broadcast_get_client();
 
 #endif //RESPONSESERVER_BROADCAST_H

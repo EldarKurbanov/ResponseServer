@@ -9,11 +9,7 @@
 #include <stdlib.h>
 #include <errno.h>
 
-void err_exit(const char *message) {
-    char buf[BUFSIZ];
-    snprintf(buf, BUFSIZ, "\nError [%i] %s", errno, message);
-    perror(buf);
-    exit(EXIT_FAILURE);
-}
+/* print message and exit with error */
+void err_exit(const char *message);
 
 #endif //RESPONSESERVER_ERR_EXIT_H

@@ -7,10 +7,10 @@
 
 #define DELAY_TIME 500
 
-#ifdef __APPLE__
-    #include "../lib/fakeWiringPi.h"
-#else
+#ifdef __linux__
     #include <wiringPi.h>
+#else
+    #include "../lib/fakeWiringPi.h"
 #endif
 
 #include "../err_exit.h"

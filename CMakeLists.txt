@@ -3,8 +3,7 @@ project(ResponseServer C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(
-        ResponseServer
+set (COMMON_FILES
         main.c
 
         network/broadcast.h
@@ -18,10 +17,6 @@ add_executable(
         json/control_struct.c
         control/process_control.h
         control/process_control.c
-        control/control_hardware.h
-#        control/control_hardware.c
-        control/control_emulate.h
-        control/control_emulate.c
 
         err_exit.h
         err_exit.c
@@ -30,10 +25,24 @@ add_executable(
         json/parse_req_res.c
 
         network/tcp.c
-        network/tcp.h)
+        network/tcp.h
+)
 
-if (NOT APPLE)
-    # original wiringPi
+if (__arm__)
+    add_executable(ResponseServer
+            ${COMMON_FILES}
+            control/control_hardware.h
+            control/control_hardware.c
+    )
+    else()
+    add_executable(ResponseServer
+            ${COMMON_FILES}
+            control/control_emulate.h
+            control/control_emulate.c
+    )
+endif()
+
+if (__linux__)
     find_library(WIRINGPI_LIBRARIES NAMES wiringPi)
     target_link_libraries(ResponseServer ${WIRINGPI_LIBRARIES})
 endif()

@@ -5,6 +5,8 @@
 #ifndef RESPONSESERVER_CONTROL_HARDWARE_H
 #define RESPONSESERVER_CONTROL_HARDWARE_H
 
+#define DELAY_TIME 500
+
 #include <wiringPi.h>
 #include "../err_exit.h"
 

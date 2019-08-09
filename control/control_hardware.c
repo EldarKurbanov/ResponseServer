@@ -11,13 +11,46 @@ void control_init() {
 }
 
 void control_hardware_setup_pins() {
+    pinMode(7, OUTPUT);
     pinMode(0, OUTPUT);
+    pinMode(2, OUTPUT);
+    pinMode(3, OUTPUT);
 }
 
-void control_hardware_forward(unsigned int how_long) {
+void control_forward() {
+    printf("forward\n");
+    digitalWrite (7, 1) ;  // On
+    delay (DELAY_TIME);
+    digitalWrite (7, 0) ;  // Off
+}
+
+void control_back() {
+    printf("back\n");
     digitalWrite (0, 1) ;  // On
-    delay (how_long) ;                // mS
+    delay (DELAY_TIME);
     digitalWrite (0, 0) ;  // Off
+}
+
+void control_rotate_left() {
+    printf("rotate left\n");
+    digitalWrite (2, 1) ;  // On
+    delay (DELAY_TIME);
+    digitalWrite (2, 0) ;  // Off
+}
+
+void control_rotate_right() {
+    printf("rotate right\n");
+    digitalWrite (3, 1) ;  // On
+    delay (DELAY_TIME);
+    digitalWrite (3, 0) ;  // Off
+}
+
+void control_left_forward() {
+
+}
+
+void control_right_forward() {
+
 }
 
 

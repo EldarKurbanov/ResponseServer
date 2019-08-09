@@ -17,7 +17,19 @@ add_executable(
         json/control_struct.c
         control/process_control.h
         control/process_control.c
-        control/control_hardware.h control/control_hardware.c err_exit.h json/parse_req_res.h json/parse_req_res.c network/tcp.c network/tcp.h err_exit.c)
+        control/control_hardware.h
+#        control/control_hardware.c
+        control/control_emulate.h
+        control/control_emulate.c
+
+        err_exit.h
+        err_exit.c
+
+        json/parse_req_res.h
+        json/parse_req_res.c
+
+        network/tcp.c
+        network/tcp.h)
 
 # wiringPi
 find_library(WIRINGPI_LIBRARIES NAMES wiringPi)

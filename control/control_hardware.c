@@ -2,9 +2,8 @@
 // Created by mrkotyk on 05.08.2019.
 //
 #include "control_hardware.h"
-#include "../err_exit.h"
 
-void control_hardware_setup() {
+void control_init() {
     if(wiringPiSetup() != 0)
         err_exit("<control_hardware_setup> can't setup wiringPi.");
 

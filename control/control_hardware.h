@@ -6,11 +6,22 @@
 #define RESPONSESERVER_CONTROL_HARDWARE_H
 
 #include <wiringPi.h>
-
-void control_hardware_setup();
+#include "../err_exit.h"
 
 void control_hardware_setup_pins();
 
-void control_hardware_forward(unsigned int how_long);
+extern void control_init();
+
+void control_forward();
+
+void control_back();
+
+void control_rotate_left();
+
+void control_rotate_right();
+
+void control_left_forward();
+
+void control_right_forward();
 
 #endif //RESPONSESERVER_CONTROL_HARDWARE_H

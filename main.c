@@ -13,7 +13,7 @@ void broadcast_connect()
     int sock_d = broadcast_init(SRV_PORT, CLNT_PORT);
 
     while(true) {
-        usleep(100000);
+        usleep(10000);
         char *client_message = broadcast_recv(sock_d);
         //check received packet and response
         if (check_request_method(client_message, PERMISSION_REQUEST_METHOD)) {
@@ -31,6 +31,7 @@ int main()
 {
     broadcast_connect();
     int sock_d = tcp_init(SRV_PORT);
+    control_init();
 
     while(true)
     {

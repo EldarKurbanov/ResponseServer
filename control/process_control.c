@@ -5,25 +5,19 @@
 #include "process_control.h"
 
 void process_button_input(const struct control_button *input)
-{   // TODO call gpio methods
+{
     switch (input->state) {
-        case CONTROL_STATE_FORWARD:
-            printf("forward\n");
+        case CONTROL_STATE_FORWARD:       control_forward();
             break;
-        case CONTROL_STATE_BACK:
-            printf("back\n");
+        case CONTROL_STATE_BACK:          control_back();
             break;
-        case CONTROL_STATE_ROTATE_LEFT:
-            printf("rotate left\n");
+        case CONTROL_STATE_ROTATE_LEFT:   control_rotate_left();
             break;
-        case CONTROL_STATE_ROTATE_RIGHT:
-            printf("rotate right\n");
+        case CONTROL_STATE_ROTATE_RIGHT:  control_rotate_right();
             break;
-        case CONTROL_STATE_LEFT_FORWARD:
-            printf("left forward\n");
+        case CONTROL_STATE_LEFT_FORWARD:  control_left_forward();
             break;
-        case CONTROL_STATE_RIGHT_FORWARD:
-            printf("right forward\n");
+        case CONTROL_STATE_RIGHT_FORWARD: control_right_forward();
             break;
         default:
             fprintf(stderr,"<process_button_input> wrong control state.\n");

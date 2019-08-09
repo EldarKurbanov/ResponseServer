@@ -5,6 +5,12 @@
 #ifndef RESPONSESERVER_PROCESS_CONTROL_H
 #define RESPONSESERVER_PROCESS_CONTROL_H
 
+#ifdef __arm__
+    #include "control_hardware.h"
+#else
+    #include "control_emulate.h"
+#endif
+
 #include "../json/control_struct.h"
 
 void process_control(const char *message);

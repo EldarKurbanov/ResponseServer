@@ -11,7 +11,6 @@ set (COMMON_FILES
 
         lib/cJSON.c
         lib/cJSON.h
-        lib/fakeWiringPi.h
 
         json/control_struct.h
         json/control_struct.c
@@ -28,19 +27,24 @@ set (COMMON_FILES
         network/tcp.h
 )
 
+set (PLATFORM_FILES "")
+
 if (__arm__)
-    add_executable(ResponseServer
-            ${COMMON_FILES}
+    set(PLATFORM_FILES ${PLATFORM_FILES}
             control/control_hardware.h
-            control/control_hardware.c
-    )
-    else()
-    add_executable(ResponseServer
-            ${COMMON_FILES}
+            control/control_hardware.c)
+else()
+    set(PLATFORM_FILES ${PLATFORM_FILES}
             control/control_emulate.h
-            control/control_emulate.c
-    )
+            control/control_emulate.c)
 endif()
+
+if (NOT __linux__)
+    set(PLATFORM_FILES ${PLATFORM_FILES}
+            lib/fakeWiringPi.h)
+endif()
+
+add_executable(ResponseServer ${COMMON_FILES} ${PLATFORM_FILES})
 
 if (__linux__)
     find_library(WIRINGPI_LIBRARIES NAMES wiringPi)

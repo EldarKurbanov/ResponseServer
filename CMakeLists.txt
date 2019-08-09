@@ -12,6 +12,7 @@ add_executable(
 
         lib/cJSON.c
         lib/cJSON.h
+        lib/fakeWiringPi.h
 
         json/control_struct.h
         json/control_struct.c
@@ -31,6 +32,8 @@ add_executable(
         network/tcp.c
         network/tcp.h)
 
-# wiringPi
-find_library(WIRINGPI_LIBRARIES NAMES wiringPi)
-target_link_libraries(ResponseServer ${WIRINGPI_LIBRARIES})
+if (NOT APPLE)
+    # original wiringPi
+    find_library(WIRINGPI_LIBRARIES NAMES wiringPi)
+    target_link_libraries(ResponseServer ${WIRINGPI_LIBRARIES})
+endif()

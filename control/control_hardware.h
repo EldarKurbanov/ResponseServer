@@ -7,7 +7,12 @@
 
 #define DELAY_TIME 500
 
-#include <wiringPi.h>
+#ifdef __APPLE__
+    #include "../lib/fakeWiringPi.h"
+#else
+    #include <wiringPi.h>
+#endif
+
 #include "../err_exit.h"
 
 void control_hardware_setup_pins();

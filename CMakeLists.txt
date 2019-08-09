@@ -18,9 +18,9 @@ add_executable(
         control/process_control.h
         control/process_control.c
         control/control_hardware.h
-        control/control_hardware.c
+#        control/control_hardware.c
         control/control_emulate.h
-#        control/control_emulate.c
+        control/control_emulate.c
 
         err_exit.h
         err_exit.c

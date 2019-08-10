@@ -8,24 +8,27 @@ set (COMMON_FILES
 
         network/broadcast.h
         network/broadcast.c
+        network/tcp.c
+        network/tcp.h
 
         lib/cJSON.c
         lib/cJSON.h
 
         json/control_struct.h
         json/control_struct.c
-        control/process_control.h
-        control/process_control.c
-
-        err_exit.h
-        err_exit.c
-
         json/parse_req_res.h
         json/parse_req_res.c
 
-        network/tcp.c
-        network/tcp.h
-)
+        control/process_control.h
+        control/process_control.c
+
+        security/session.c
+        security/session.h
+
+        err_exit.h
+        err_exit.c)
+
+link_libraries(ssl  crypto)
 
 set (PLATFORM_FILES "")
 

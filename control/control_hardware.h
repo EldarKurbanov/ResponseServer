@@ -7,12 +7,12 @@
 
 #define DELAY_TIME 500
 
-#ifdef __linux__
-    #include <wiringPi.h>
-#else
-    #include "../lib/fakeWiringPi.h"
-#endif
-
+// Заголовок подключается только если определена переменная
+// окружения __arm__, в ином случае происходит подключение
+// заголовка control_emulate.h, в котором вызов
+// методов движения просто выводит их названия в консоль
+// (см control_emulate.h)
+#include <wiringPi.h>
 #include "../err_exit.h"
 
 void control_hardware_setup_pins();

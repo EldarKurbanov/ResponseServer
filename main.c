@@ -4,6 +4,7 @@
 #include "network/broadcast.h"
 #include "json/parse_req_res.h"
 #include "network/tcp.h"
+#include "network/keepalive.h"
 
 #define SRV_PORT 1031
 #define CLNT_PORT 1032
@@ -29,15 +30,19 @@ void broadcast_connect()
 
 int main()
 {
-    broadcast_connect();
-    int sock_d = tcp_init(SRV_PORT);
-    control_init();
+    while (true) {
+        broadcast_connect();
 
-    while(true)
-    {
+        int sock_d = tcp_init(SRV_PORT);
+        control_init();
+        startKeepAlive();
+
         int conn_d = tcp_accept(sock_d);
         char *message = tcp_read(conn_d);
         process_control(message);
+
+        close(conn_d);
+        close(sock_d);
     }
 }
 

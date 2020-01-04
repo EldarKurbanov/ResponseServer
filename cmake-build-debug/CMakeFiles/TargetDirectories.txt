@@ -1,3 +1,3 @@
-/Users/eldar/CLionProjects/ResponseServer/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/eldar/CLionProjects/ResponseServer/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/eldar/CLionProjects/ResponseServer/cmake-build-debug/CMakeFiles/ResponseServer.dir
+/home/eldar/CLionProjects/ResponseServer/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/eldar/CLionProjects/ResponseServer/cmake-build-debug/CMakeFiles/ResponseServer.dir
+/home/eldar/CLionProjects/ResponseServer/cmake-build-debug/CMakeFiles/edit_cache.dir

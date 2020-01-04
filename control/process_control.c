@@ -39,6 +39,10 @@ void process_control(const char *message)
     if(strlen(message) == 0)
         return;
 
+    if (strcmp(message, "STOP") == 0) {
+        return;
+    }
+
     cJSON *control_json = cJSON_Parse(message);
     if (control_json == NULL) {
         print_json_err();

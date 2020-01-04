@@ -1,3 +1,5 @@
+#include <stdbool.h>
+#include <arpa/inet.h>
 #include "tcp.h"
 
 struct sockaddr_in client_inf;
@@ -53,3 +55,31 @@ char* tcp_read(int conn_d) {
     return read_buf;
 }
 
+void tcp_stop_self() {
+    int sockfd, connfd;
+    struct sockaddr_in servaddr, cli;
+
+    // socket create and varification
+    sockfd = socket(AF_INET, SOCK_STREAM, 0);
+    if (sockfd == -1) {
+        printf("socket creation failed...\n");
+        exit(0);
+    }
+    else
+        printf("Socket successfully created..\n");
+    bzero(&servaddr, sizeof(servaddr));
+
+    // assign IP, PORT
+    servaddr.sin_family = AF_INET;
+    servaddr.sin_addr.s_addr = inet_addr("127.0.0.1");
+    servaddr.sin_port = htons(1031);
+
+    // connect the client socket to server socket
+    if (connect(sockfd, (struct sockaddr*) &servaddr, sizeof(servaddr)) != 0) {
+        printf("connection with the server failed...\n");
+        exit(0);
+    }
+    const char* stop_message = "STOP";
+    write(sockfd, stop_message, sizeof(stop_message));
+    close(sockfd);
+}

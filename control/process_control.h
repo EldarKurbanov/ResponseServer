@@ -5,7 +5,7 @@
 #ifndef RESPONSESERVER_PROCESS_CONTROL_H
 #define RESPONSESERVER_PROCESS_CONTROL_H
 
-#if defined(__arm__) && defined(__linux__)
+#if defined(__arm__)
     #include "control_hardware.h"
 #else
     #include "control_emulate.h"

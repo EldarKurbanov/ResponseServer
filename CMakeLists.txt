@@ -26,7 +26,11 @@ set (COMMON_FILES
         security/session.h
 
         err_exit.h
-        err_exit.c)
+        err_exit.c
+
+        network/keepalive.h
+        network/keepalive.c
+        )
 
 link_libraries(ssl  crypto)
 
@@ -42,14 +46,13 @@ else()
             control/control_emulate.c)
 endif()
 
-if (NOT __linux__)
-    set(PLATFORM_FILES ${PLATFORM_FILES}
-            lib/fakeWiringPi.h)
-endif()
-
 add_executable(ResponseServer ${COMMON_FILES} ${PLATFORM_FILES})
 
-if (__linux__)
+set(THREADS_PREFER_PTHREAD_FLAG ON)
+find_package(Threads REQUIRED)
+target_link_libraries(ResponseServer Threads::Threads)
+
+if (__arm__)
     find_library(WIRINGPI_LIBRARIES NAMES wiringPi)
     target_link_libraries(ResponseServer ${WIRINGPI_LIBRARIES})
 endif()

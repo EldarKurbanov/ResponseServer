@@ -31,4 +31,6 @@ char* broadcast_client_addr();
 /* returns last connected client information */
 struct sockaddr_in* broadcast_get_client();
 
+void tcp_close(int sock_d);
+
 #endif //RESPONSESERVER_BROADCAST_H

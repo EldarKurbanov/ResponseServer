@@ -20,4 +20,6 @@ int tcp_accept(int sock_d);
 
 char* tcp_read(int conn_d);
 
+void tcp_stop_self();
+
 #endif //RESPONSESERVER_TCP_H

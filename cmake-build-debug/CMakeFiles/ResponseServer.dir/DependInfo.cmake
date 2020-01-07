@@ -15,6 +15,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/home/eldar/CLionProjects/ResponseServer/network/keepalive.c" "/home/eldar/CLionProjects/ResponseServer/cmake-build-debug/CMakeFiles/ResponseServer.dir/network/keepalive.c.o"
   "/home/eldar/CLionProjects/ResponseServer/network/tcp.c" "/home/eldar/CLionProjects/ResponseServer/cmake-build-debug/CMakeFiles/ResponseServer.dir/network/tcp.c.o"
   "/home/eldar/CLionProjects/ResponseServer/security/session.c" "/home/eldar/CLionProjects/ResponseServer/cmake-build-debug/CMakeFiles/ResponseServer.dir/security/session.c.o"
+  "/home/eldar/CLionProjects/ResponseServer/tools/tools.c" "/home/eldar/CLionProjects/ResponseServer/cmake-build-debug/CMakeFiles/ResponseServer.dir/tools/tools.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

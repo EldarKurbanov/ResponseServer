@@ -22,4 +22,6 @@ char* tcp_read(int conn_d);
 
 void tcp_stop_self();
 
+void tcp_send(int sock_d, const char* message);
+
 #endif //RESPONSESERVER_TCP_H

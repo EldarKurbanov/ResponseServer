@@ -10,6 +10,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/ResponseServer.dir/network/keepalive.c.o"
   "CMakeFiles/ResponseServer.dir/network/tcp.c.o"
   "CMakeFiles/ResponseServer.dir/security/session.c.o"
+  "CMakeFiles/ResponseServer.dir/tools/tools.c.o"
   "ResponseServer"
   "ResponseServer.pdb"
 )

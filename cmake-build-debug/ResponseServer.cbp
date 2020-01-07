@@ -141,6 +141,12 @@
 		<Unit filename="/home/eldar/CLionProjects/ResponseServer/security/session.h">
 			<Option target="ResponseServer"/>
 		</Unit>
+		<Unit filename="/home/eldar/CLionProjects/ResponseServer/tools/tools.c">
+			<Option target="ResponseServer"/>
+		</Unit>
+		<Unit filename="/home/eldar/CLionProjects/ResponseServer/tools/tools.h">
+			<Option target="ResponseServer"/>
+		</Unit>
 		<Unit filename="/home/eldar/CLionProjects/ResponseServer/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

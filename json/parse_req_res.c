@@ -41,3 +41,8 @@ char* response_str(struct jsonrpc_response *response)
 
     cJSON_AddStringToObject(response_json, "result", "Awesome 4K");
 }
+
+const char* session_key_to_json(const char* session_key) {
+    const char* part = concat("{\"jsonrpc\":\"2.0\",\"session_key\":\"", session_key);
+    return concat(part, "\",\"id\":1}");
+}

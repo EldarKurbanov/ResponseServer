@@ -55,6 +55,49 @@ char* tcp_read(int conn_d) {
     return read_buf;
 }
 
+char* tcp_accept_read(int sock_d) {
+    // Accept the data packet from client and verification
+    socklen_t client_len = sizeof(client_inf);
+    int conn_d = accept(sock_d, (struct sockaddr *) &client_inf, &client_len);
+    if (conn_d < 0)
+        err_exit("tcp accept failed");
+
+    // printf("Connection accepted.\n");
+    bzero(read_buf, BUFSIZ);
+    read(conn_d, read_buf, BUFSIZ);
+    printf("Received message: '%s'\n", read_buf);
+
+    close(conn_d);
+    close(sock_d);
+    return read_buf;
+}
+
+void tcp_conn_send(int sock_d, const char* message) {
+    // connect the client socket to server socket
+    if (connect(sock_d, (struct sockaddr*) &client_inf, sizeof(client_inf)) != 0) {
+        printf("connection with the server failed...\n");
+        exit(0);
+    }
+    else
+        printf("connected to the server..\n");
+
+    write(sock_d, message, sizeof(message));
+
+    // close the socket
+    close(sock_d);
+}
+
+bool tcp_send(int conn_d, const char* message) {
+    ssize_t send = write(conn_d, message, sizeof(message));
+    if (send > 0) {
+        printf("Send message: '%s'\n", message);
+        return true;
+    } else {
+        printf("Message: '%s' doesn't send\n", message);
+        return false;
+    }
+}
+
 void tcp_stop_self() {
     int sockfd, connfd;
     struct sockaddr_in servaddr, cli;
@@ -72,7 +115,7 @@ void tcp_stop_self() {
     // assign IP, PORT
     servaddr.sin_family = AF_INET;
     servaddr.sin_addr.s_addr = inet_addr("127.0.0.1");
-    servaddr.sin_port = htons(1031);
+    servaddr.sin_port = htons(1033);
 
     // connect the client socket to server socket
     if (connect(sockfd, (struct sockaddr*) &servaddr, sizeof(servaddr)) != 0) {

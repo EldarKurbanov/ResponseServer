@@ -12,8 +12,6 @@
 
 #define RESPONSE_ALLOWED_STR "{\"jsonrpc\":\"2.0\",\"result\":\"allowed\",\"id\":1}"
 #define RESPONSE_CONNECT_SUCCESS "{\"jsonrpc\":\"2.0\",\"result\":\"success\",\"id\":1}"
-#define RESPONSE_CONNECT_READY "{\"jsonrpc\":\"2.0\",\"result\":\"ready\",\"id\":1}"
-#define RESPONSE_SESSION_KEY(KEY) "{\"jsonrpc\":\"2.0\",\"session_key\":\"KEY\",\"id\":1}"
 
 #include <stdlib.h>
 #include <stdio.h>

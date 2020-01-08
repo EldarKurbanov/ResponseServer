@@ -35,30 +35,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c3db64ab-13be-4161-8e55-a2a0d4b63b94" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/tools/tools.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tools/tools.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ResponseServer.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ResponseServer.dir/C.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ResponseServer.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ResponseServer.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ResponseServer.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ResponseServer.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ResponseServer.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ResponseServer.dir/cmake_clean.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ResponseServer.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ResponseServer.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ResponseServer.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ResponseServer.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ResponseServer.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ResponseServer.dir/link.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ResponseServer.dir/main.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ResponseServer.dir/main.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ResponseServer.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ResponseServer.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/ResponseServer" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/ResponseServer" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/ResponseServer.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/ResponseServer.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/json/parse_req_res.c" beforeDir="false" afterPath="$PROJECT_DIR$/json/parse_req_res.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/json/parse_req_res.h" beforeDir="false" afterPath="$PROJECT_DIR$/json/parse_req_res.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/network/tcp.c" beforeDir="false" afterPath="$PROJECT_DIR$/network/tcp.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/network/tcp.h" beforeDir="false" afterPath="$PROJECT_DIR$/network/tcp.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security/session.c" beforeDir="false" afterPath="$PROJECT_DIR$/security/session.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security/session.h" beforeDir="false" afterPath="$PROJECT_DIR$/security/session.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,6 +111,7 @@
       <workItem from="1578132586011" duration="18108000" />
       <workItem from="1578216105781" duration="10585000" />
       <workItem from="1578303409862" duration="14202000" />
+      <workItem from="1578485261231" duration="7775000" />
     </task>
     <task id="LOCAL-00001" summary="1. This commit stops support Mac OS because author of this code still has bad knowledge about correct writing of MakeFiles;&#10;2. Added keepalive technology. Now server doesn't need reboot for reconnect of Android client. (Still not tested because client version with keepalive not ready)&#10;3. Code consists many of dirty places, the next commit should fix it.">
       <created>1578155663882</created>
@@ -157,34 +144,39 @@
     <option name="LAST_COMMIT_MESSAGE" value="1. This commit stops support Mac OS because author of this code still has bad knowledge about correct writing of MakeFiles;&#10;2. Added keepalive technology. Now server doesn't need reboot for reconnect of Android client. (Still not tested because client version with keepalive not ready)&#10;3. Code consists many of dirty places, the next commit should fix it." />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1838" y="149" width="860" height="807" key="CommitChangelistDialog2" timestamp="1578155663699">
-      <screen x="1280" y="0" width="1920" height="1080" />
+    <state x="126" y="88" width="838" height="822" key="CommitChangelistDialog2" timestamp="1578494671325">
+      <screen x="67" y="27" width="1213" height="997" />
     </state>
     <state x="1838" y="149" width="860" height="807" key="CommitChangelistDialog2/1280.0.1920.1080/3200.0.1360.768/0.56.1280.1024@1280.0.1920.1080" timestamp="1578155663699" />
-    <state width="1807" height="344" key="GridCell.Tab.0.bottom" timestamp="1578331158064">
-      <screen x="3200" y="95" width="1360" height="768" />
+    <state x="126" y="88" width="838" height="822" key="CommitChangelistDialog2/67.27.1213.997/1280.0.1360.768@67.27.1213.997" timestamp="1578494671325" />
+    <state width="1167" height="190" key="GridCell.Tab.0.bottom" timestamp="1578494570807">
+      <screen x="67" y="27" width="1213" height="997" />
     </state>
     <state width="1807" height="344" key="GridCell.Tab.0.bottom/1280.0.1920.1080/3200.0.1360.768/0.56.1280.1024@1280.0.1920.1080" timestamp="1578155779077" />
     <state width="1807" height="277" key="GridCell.Tab.0.bottom/1280.0.1920.1080/3200.95.1360.768/0.56.1280.1024@1280.0.1920.1080" timestamp="1578251089335" />
     <state width="1807" height="344" key="GridCell.Tab.0.bottom/1280.0.1920.1080/3200.95.1360.768/0.56.1280.1024@3200.95.1360.768" timestamp="1578331158064" />
-    <state width="1807" height="344" key="GridCell.Tab.0.center" timestamp="1578331158064">
-      <screen x="3200" y="95" width="1360" height="768" />
+    <state width="1167" height="190" key="GridCell.Tab.0.bottom/67.27.1213.997/1280.0.1360.768@67.27.1213.997" timestamp="1578494570807" />
+    <state width="1167" height="190" key="GridCell.Tab.0.center" timestamp="1578494570807">
+      <screen x="67" y="27" width="1213" height="997" />
     </state>
     <state width="1807" height="344" key="GridCell.Tab.0.center/1280.0.1920.1080/3200.0.1360.768/0.56.1280.1024@1280.0.1920.1080" timestamp="1578155779077" />
     <state width="1807" height="277" key="GridCell.Tab.0.center/1280.0.1920.1080/3200.95.1360.768/0.56.1280.1024@1280.0.1920.1080" timestamp="1578251089335" />
     <state width="1807" height="344" key="GridCell.Tab.0.center/1280.0.1920.1080/3200.95.1360.768/0.56.1280.1024@3200.95.1360.768" timestamp="1578331158064" />
-    <state width="1807" height="344" key="GridCell.Tab.0.left" timestamp="1578331158064">
-      <screen x="3200" y="95" width="1360" height="768" />
+    <state width="1167" height="190" key="GridCell.Tab.0.center/67.27.1213.997/1280.0.1360.768@67.27.1213.997" timestamp="1578494570807" />
+    <state width="1167" height="190" key="GridCell.Tab.0.left" timestamp="1578494570806">
+      <screen x="67" y="27" width="1213" height="997" />
     </state>
     <state width="1807" height="344" key="GridCell.Tab.0.left/1280.0.1920.1080/3200.0.1360.768/0.56.1280.1024@1280.0.1920.1080" timestamp="1578155779077" />
     <state width="1807" height="277" key="GridCell.Tab.0.left/1280.0.1920.1080/3200.95.1360.768/0.56.1280.1024@1280.0.1920.1080" timestamp="1578251089335" />
     <state width="1807" height="344" key="GridCell.Tab.0.left/1280.0.1920.1080/3200.95.1360.768/0.56.1280.1024@3200.95.1360.768" timestamp="1578331158064" />
-    <state width="1807" height="344" key="GridCell.Tab.0.right" timestamp="1578331158064">
-      <screen x="3200" y="95" width="1360" height="768" />
+    <state width="1167" height="190" key="GridCell.Tab.0.left/67.27.1213.997/1280.0.1360.768@67.27.1213.997" timestamp="1578494570806" />
+    <state width="1167" height="190" key="GridCell.Tab.0.right" timestamp="1578494570807">
+      <screen x="67" y="27" width="1213" height="997" />
     </state>
     <state width="1807" height="344" key="GridCell.Tab.0.right/1280.0.1920.1080/3200.0.1360.768/0.56.1280.1024@1280.0.1920.1080" timestamp="1578155779077" />
     <state width="1807" height="277" key="GridCell.Tab.0.right/1280.0.1920.1080/3200.95.1360.768/0.56.1280.1024@1280.0.1920.1080" timestamp="1578251089335" />
     <state width="1807" height="344" key="GridCell.Tab.0.right/1280.0.1920.1080/3200.95.1360.768/0.56.1280.1024@3200.95.1360.768" timestamp="1578331158064" />
+    <state width="1167" height="190" key="GridCell.Tab.0.right/67.27.1213.997/1280.0.1360.768@67.27.1213.997" timestamp="1578494570807" />
     <state width="1807" height="344" key="GridCell.Tab.1.bottom" timestamp="1578331158064">
       <screen x="3200" y="95" width="1360" height="768" />
     </state>
@@ -209,11 +201,12 @@
       <screen x="1280" y="0" width="1920" height="1080" />
     </state>
     <state x="1868" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2/1280.0.1920.1080/3200.0.1360.768/0.56.1280.1024@1280.0.1920.1080" timestamp="1578155666160" />
-    <state x="1929" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1578303410601">
-      <screen x="1280" y="0" width="1920" height="1080" />
+    <state x="1740" y="270" key="com.intellij.ide.util.TipDialog" timestamp="1578485261237">
+      <screen x="1280" y="0" width="1360" height="768" />
     </state>
     <state x="1929" y="380" key="com.intellij.ide.util.TipDialog/1280.0.1920.1080/3200.0.1360.768/0.56.1280.1024@1280.0.1920.1080" timestamp="1578132589983" />
     <state x="1929" y="380" key="com.intellij.ide.util.TipDialog/1280.0.1920.1080/3200.95.1360.768/0.56.1280.1024@1280.0.1920.1080" timestamp="1578303410601" />
+    <state x="1740" y="270" key="com.intellij.ide.util.TipDialog/67.27.1213.997/1280.0.1360.768@1280.0.1360.768" timestamp="1578485261237" />
     <state x="3648" y="398" width="454" height="160" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1578216187298">
       <screen x="3200" y="95" width="1360" height="768" />
     </state>

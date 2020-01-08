@@ -19,6 +19,8 @@
 #include <string.h>
 #include <time.h>
 
+char* session_key;
+
 void security_init();
 
 char* generate_session_key();

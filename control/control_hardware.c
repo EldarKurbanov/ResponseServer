@@ -11,38 +11,54 @@ void control_init() {
 }
 
 void control_hardware_setup_pins() {
-    pinMode(7, OUTPUT);
-    pinMode(0, OUTPUT);
-    pinMode(2, OUTPUT);
-    pinMode(3, OUTPUT);
+    pinMode(21, OUTPUT);
+    pinMode(22, OUTPUT);
+    pinMode(23, OUTPUT);
+    pinMode(24, OUTPUT);
+    pinMode(25, OUTPUT);
+    pinMode(27, OUTPUT);
+    pinMode(28, OUTPUT);
+    pinMode(29, OUTPUT);
 }
 
 void control_forward() {
     printf("forward\n");
-    digitalWrite (7, 1) ;  // On
+    digitalWrite (21, 1) ;  // On
+    digitalWrite (22, 1) ;
+    digitalWrite (25, 1) ;
+    digitalWrite (27, 1) ;
     delay (DELAY_TIME);
-    digitalWrite (7, 0) ;  // Off
+    digitalWrite (21, 0) ;  // Off
+    digitalWrite (22, 0) ;
+    digitalWrite (25, 0) ;
+    digitalWrite (27, 0) ;
 }
 
 void control_back() {
     printf("back\n");
-    digitalWrite (0, 1) ;  // On
+    digitalWrite (23, 1) ;  // On
+    digitalWrite (24, 1) ;
+    digitalWrite (28, 1) ;
+    digitalWrite (29, 1) ;
     delay (DELAY_TIME);
-    digitalWrite (0, 0) ;  // Off
+    digitalWrite (23, 0) ;  // Off
+    digitalWrite (24, 0) ;
+    digitalWrite (28, 0) ;
+    digitalWrite (29, 0) ;
 }
 
 void control_rotate_left() {
     printf("rotate left\n");
-    digitalWrite (2, 1) ;  // On
+    digitalWrite (22, 1) ;  // On
     delay (DELAY_TIME);
-    digitalWrite (2, 0) ;  // Off
+    digitalWrite (22, 0) ;  // Off
 }
 
 void control_rotate_right() {
     printf("rotate right\n");
-    digitalWrite (3, 1) ;  // On
+    digitalWrite (21, 1) ;  // On
     delay (DELAY_TIME);
-    digitalWrite (3, 0) ;  // Off
+    digitalWrite (21, 0) ;  // Off
 }
 
 void control_left_forward() {

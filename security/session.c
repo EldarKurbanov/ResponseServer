@@ -15,7 +15,8 @@ void security_init() {
 char* generate_session_key()
 {
     if(!init_flag) err_exit("security module has not been initialized.");
-    return rand_str(SESSION_KEY_LENGTH);
+    session_key = rand_str(SESSION_KEY_LENGTH);
+    return session_key;
 }
 
 char *rand_str(size_t length) {

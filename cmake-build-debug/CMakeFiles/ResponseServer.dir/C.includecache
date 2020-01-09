@@ -53,6 +53,8 @@ string.h
 -
 ../lib/cJSON.h
 /home/eldar/CLionProjects/ResponseServer/lib/cJSON.h
+../tools/tools.h
+/home/eldar/CLionProjects/ResponseServer/tools/tools.h
 
 /home/eldar/CLionProjects/ResponseServer/lib/cJSON.h
 stddef.h
@@ -69,6 +71,10 @@ network/tcp.h
 /home/eldar/CLionProjects/ResponseServer/network/tcp.h
 network/keepalive.h
 /home/eldar/CLionProjects/ResponseServer/network/keepalive.h
+security/session.h
+/home/eldar/CLionProjects/ResponseServer/security/session.h
+stdbool.h
+-
 
 /home/eldar/CLionProjects/ResponseServer/network/broadcast.h
 stdio.h
@@ -91,10 +97,6 @@ arpa/inet.h
 -
 ../err_exit.h
 /home/eldar/CLionProjects/ResponseServer/err_exit.h
-
-/home/eldar/CLionProjects/ResponseServer/network/keepalive.c
-keepalive.h
-/home/eldar/CLionProjects/ResponseServer/network/keepalive.h
 
 /home/eldar/CLionProjects/ResponseServer/network/keepalive.h
 pthread.h
@@ -124,5 +126,31 @@ netinet/in.h
 zconf.h
 -
 strings.h
+-
+string.h
+-
+
+/home/eldar/CLionProjects/ResponseServer/security/session.h
+openssl/ssl.h
+-
+openssl/rsa.h
+-
+openssl/evp.h
+-
+openssl/pem.h
+-
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+time.h
+-
+
+/home/eldar/CLionProjects/ResponseServer/tools/tools.h
+stdlib.h
+-
+string.h
 -
 

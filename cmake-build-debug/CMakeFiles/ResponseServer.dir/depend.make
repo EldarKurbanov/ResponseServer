@@ -22,6 +22,7 @@ CMakeFiles/ResponseServer.dir/json/control_struct.c.o: ../lib/cJSON.h
 CMakeFiles/ResponseServer.dir/json/parse_req_res.c.o: ../json/parse_req_res.c
 CMakeFiles/ResponseServer.dir/json/parse_req_res.c.o: ../json/parse_req_res.h
 CMakeFiles/ResponseServer.dir/json/parse_req_res.c.o: ../lib/cJSON.h
+CMakeFiles/ResponseServer.dir/json/parse_req_res.c.o: ../tools/tools.h
 
 CMakeFiles/ResponseServer.dir/lib/cJSON.c.o: ../lib/cJSON.c
 CMakeFiles/ResponseServer.dir/lib/cJSON.c.o: ../lib/cJSON.h
@@ -37,6 +38,8 @@ CMakeFiles/ResponseServer.dir/main.c.o: ../main.c
 CMakeFiles/ResponseServer.dir/main.c.o: ../network/broadcast.h
 CMakeFiles/ResponseServer.dir/main.c.o: ../network/keepalive.h
 CMakeFiles/ResponseServer.dir/main.c.o: ../network/tcp.h
+CMakeFiles/ResponseServer.dir/main.c.o: ../security/session.h
+CMakeFiles/ResponseServer.dir/main.c.o: ../tools/tools.h
 
 CMakeFiles/ResponseServer.dir/network/broadcast.c.o: ../err_exit.h
 CMakeFiles/ResponseServer.dir/network/broadcast.c.o: ../network/broadcast.c
@@ -54,4 +57,7 @@ CMakeFiles/ResponseServer.dir/network/tcp.c.o: ../network/tcp.h
 CMakeFiles/ResponseServer.dir/security/session.c.o: ../err_exit.h
 CMakeFiles/ResponseServer.dir/security/session.c.o: ../security/session.c
 CMakeFiles/ResponseServer.dir/security/session.c.o: ../security/session.h
+
+CMakeFiles/ResponseServer.dir/tools/tools.c.o: ../tools/tools.c
+CMakeFiles/ResponseServer.dir/tools/tools.c.o: ../tools/tools.h
 

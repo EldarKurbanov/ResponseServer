@@ -420,6 +420,33 @@ security/session.c.s:
 	$(MAKE) -f CMakeFiles/ResponseServer.dir/build.make CMakeFiles/ResponseServer.dir/security/session.c.s
 .PHONY : security/session.c.s
 
+tools/tools.o: tools/tools.c.o
+
+.PHONY : tools/tools.o
+
+# target to build an object file
+tools/tools.c.o:
+	$(MAKE) -f CMakeFiles/ResponseServer.dir/build.make CMakeFiles/ResponseServer.dir/tools/tools.c.o
+.PHONY : tools/tools.c.o
+
+tools/tools.i: tools/tools.c.i
+
+.PHONY : tools/tools.i
+
+# target to preprocess a source file
+tools/tools.c.i:
+	$(MAKE) -f CMakeFiles/ResponseServer.dir/build.make CMakeFiles/ResponseServer.dir/tools/tools.c.i
+.PHONY : tools/tools.c.i
+
+tools/tools.s: tools/tools.c.s
+
+.PHONY : tools/tools.s
+
+# target to generate assembly for a file
+tools/tools.c.s:
+	$(MAKE) -f CMakeFiles/ResponseServer.dir/build.make CMakeFiles/ResponseServer.dir/tools/tools.c.s
+.PHONY : tools/tools.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -462,6 +489,9 @@ help:
 	@echo "... security/session.o"
 	@echo "... security/session.i"
 	@echo "... security/session.s"
+	@echo "... tools/tools.o"
+	@echo "... tools/tools.i"
+	@echo "... tools/tools.s"
 .PHONY : help
 
 

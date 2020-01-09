@@ -30,6 +30,8 @@ set (COMMON_FILES
 
         network/keepalive.h
         network/keepalive.c
+        tools/tools.h
+        tools/tools.c
         )
 
 link_libraries(ssl  crypto)

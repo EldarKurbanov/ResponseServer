@@ -6,6 +6,7 @@ char addr_buf[INET_ADDRSTRLEN];
 char read_buf[BUFSIZ];
 socklen_t socklen;
 #define PORT 1032
+struct sockaddr_in client_inf;
 
 int tcp_init(int srv_port)
 {
@@ -59,7 +60,7 @@ int tcp_init_connect(int srv_port) {
 
 int tcp_accept(int sock_d) {
     // Accept the data packet from client and verification
-    struct sockaddr_in client_inf;
+    //struct sockaddr_in client_inf;
     socklen_t client_len = sizeof(client_inf);
     int conn_d = accept(sock_d, (struct sockaddr *) &client_inf, &client_len);
     if (conn_d < 0)
@@ -70,15 +71,19 @@ int tcp_accept(int sock_d) {
 }
 
 char* tcp_read(int conn_d) {
+    read:
     bzero(read_buf, BUFSIZ);
     read(conn_d, read_buf, BUFSIZ);
+    if (strcmp(read_buf, "") == 0) {
+        goto read;
+    }
     printf("Received message: '%s'\n", read_buf);
     return read_buf;
 }
 
 struct tcp_info_accept tcp_accept_read(int sock_d) {
     // Accept the data packet from client and verification
-    struct sockaddr_in client_inf;
+    //struct sockaddr_in client_inf;
     socklen_t client_len = sizeof(client_inf);
     int conn_d = accept(sock_d, (struct sockaddr *) &client_inf, &client_len);
     if (conn_d < 0)
@@ -91,17 +96,18 @@ struct tcp_info_accept tcp_accept_read(int sock_d) {
     struct tcp_info_accept info;
     info.client_inf = client_inf;
     info.message = read_buf;
+    info.conn_d = conn_d;
     return info;
 }
 
 void tcp_conn_send(int sock_d, struct sockaddr_in client_inf2, const char* message) {
     // connect the client socket to server socket
-    struct sockaddr_in client_inf;
+    //struct sockaddr_in client_inf;
 
-    bzero(&client_inf, sizeof(client_inf));
+    /*bzero(&client_inf, sizeof(client_inf));
     client_inf.sin_family = AF_INET;
     client_inf.sin_addr.s_addr = inet_addr("192.168.100.7");
-    client_inf.sin_port = htons(1036);
+    client_inf.sin_port = htons(1036);*/
     if (connect(sock_d, (struct sockaddr*) &client_inf, sizeof(client_inf)) != 0) {
         printf("connection with the server failed...\n");
         err_exit("failed");
@@ -112,6 +118,10 @@ void tcp_conn_send(int sock_d, struct sockaddr_in client_inf2, const char* messa
 
     write(sock_d, message, sizeof(message));
 
+}
+
+void tcp_send(int conn_d, const char* message) {
+    write(conn_d, message, strlen(message));
 }
 
 void tcp_stop_self() {

@@ -43,6 +43,6 @@ char* response_str(struct jsonrpc_response *response)
 }
 
 const char* session_key_to_json(const char* session_key) {
-    const char* part = concat("{\"jsonrpc\":\"2.0\",\"session_key\":\"", session_key);
+    const char* part = concat("{\"jsonrpc\":\"2.0\",\"result\":\"", session_key);
     return concat(part, "\",\"id\":1}");
 }

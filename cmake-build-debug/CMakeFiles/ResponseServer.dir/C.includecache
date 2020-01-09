@@ -127,6 +127,8 @@ zconf.h
 -
 strings.h
 -
+string.h
+-
 
 /home/eldar/CLionProjects/ResponseServer/security/session.h
 openssl/ssl.h
